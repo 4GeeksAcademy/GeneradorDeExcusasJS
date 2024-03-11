@@ -1,17 +1,21 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
+window.onload = () => {
+  document.querySelector("#excuseGenerator").addEventListener("click", () => {
+    document.querySelector("#excuse").innerHTML = excuseGenerator();
+  });
+};
 
-window.onload = function() {
+function excuseGenerator() {
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the keys", "the car"];
+  let what = ["my homework", "the keys", "the car", "my makeup"];
   let when = [
     "before the class",
     "right on time",
     "when I finished",
-    "during my lunch",
-    "while I was praying"
+    "during my lunch"
   ];
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -29,5 +33,5 @@ window.onload = function() {
 
   console.log(frase);
 
-  document.getElementById("excuse").innerHTML = frase;
-};
+  return frase;
+}
